@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <title>Frontend Mentor | NFT preview card component</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="./style.css">
+  
+</head>
+<body>
+  <main>
+    <div class="h-screen grid content-center">
+      <div class="card rounded-xl p-4 w-11/12 md:w-72 mx-auto">
+        <div class="relative hover:cursor-pointer">
+          <img class="rounded-lg main_image" src="./images/image-equilibrium.jpg" alt="Equilibrium">
+          <div class="image-overlay">
+            <img class="icon_overlay" src="./images/icon-view.svg" alt="Overlay">
+          </div>
+        </div>
+        <p class="my-3 font-semibold"><span class="hover:cursor-pointer hover:text-cyan-400">Equilibrium #3429</span></p>
+        <p class="text-sm font-light">Our Equilibrium collection promotes balance and calm.</p>
+        <div class="flex justify-between mt-3">
+          <span class="currency text-sm font-semibold"><img class="inline-block mr-1" src="./images/icon-ethereum.svg" alt="Ethereum"> 0.041 ETH</span>
+          <span class="text-sm font-normal"> <img class="inline-block mr-1" src="./images/icon-clock.svg" alt="Clock"> 3 days left</span>
+        </div>
+        <hr class="my-5">
+        <p class="text-sm mb-2 mr-3 font-light"> <img class="inline-block mr-2 w-7 border-1 border-white rounded-full" src="./images/image-avatar.png" alt="Avatar"> Creation of <span class="text-white hover:cursor-pointer hover:text-cyan-400">Jules Wyvern</span></p>
+      </div>
+      <div class="attribution mt-5">
+        Coded by <a href="https://theredcandyy.github.io/portfolio/">Alexandre Tavares</a>.
+      </div>
+    </div>
+  </main>
+</body>
+</html>

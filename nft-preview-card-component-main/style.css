@@ -1,0 +1,78 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap');
+
+body{
+    font-family: 'Outfit', sans-serif;
+    margin: 0;
+    padding: 0;
+    font-size: 18px;
+    background-color: var(--main-bg-dark-blue);
+    color: var(--white);
+}
+
+:root{
+    --soft-blue: hsl(215, 51%, 70%);
+    --cyan: hsl(178, 100%, 50%);
+    --main-bg-dark-blue: hsl(217, 54%, 11%);
+    --card-bg-dark-blue: hsl(216, 50%, 16%);
+    --line-dark-blue: hsl(215, 32%, 27%);
+    --white: hsl(0, 0%, 100%);
+}
+
+.attribution { 
+    font-size: 11px; text-align: center; 
+}
+.attribution a {
+    color: var(--cyan); 
+}
+
+.card{
+    background-color: var(--card-bg-dark-blue);
+}
+
+hr{
+    border-color: var(--line-dark-blue);
+}
+
+.text-sm{
+    color: var(--soft-blue);
+}
+
+.currency{
+    color: var(--cyan);
+}
+
+.text-white{
+    color: var(--white);
+}
+
+.border-1{
+    border-width: 1px;
+}
+
+.image-overlay{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    transition: .5s ease;
+    background-color: hsla(178, 100%, 50%, 0.4);
+    display:none;
+}
+
+.relative:hover .image-overlay{
+    opacity: 1;
+    display:block;
+}
+
+.icon_overlay{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}

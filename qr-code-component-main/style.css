@@ -26,3 +26,15 @@ p{
     font-weight: 700 !important;
     color: var(--dark-blue);
 }
+
+.text-base{
+    color: var(--grayish-blue);
+}
+
+.attribution { 
+    font-size: 11px; text-align: center; 
+}
+
+.attribution a {
+    color: hsl(228, 45%, 44%); 
+}

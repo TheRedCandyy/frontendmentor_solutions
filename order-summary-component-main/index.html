@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <title>Frontend Mentor | Order summary card</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <main>
+    <div class="grid justify-items-center items-center h-screen">
+      <div class="card md:w-1/4 text-center rounded-xl bg-white m-5 md:m-0">
+        <div class="card-image">
+          <img src="./images/illustration-hero.svg" class="rounded-t-lg" alt="">
+        </div>
+        <div class="card-content p-5">
+          <h1 class="text-2xl font-black p-3 dark-blue">Order Summary</h1>
+          <p class="text-sm font-medium p-2 desaturated-blue">
+            You can now listen to millions of songs, audiobooks, and podcasts on any device anywhere you like!
+          </p>
+          <div class="grid grid-cols-4  rounded-xl bg-very-pale-blue p-3 my-5">
+            <div class="col-span-1 text-left">
+              <img src="./images/icon-music.svg" alt="Music">
+            </div>
+            <div class="col-span-2 text-left justify-self-start">
+                <span class="font-bold text-sm dark-blue">Annual Plan</span>
+                <span class="desaturated-blue text-sm">$59.99/year</span>
+            </div>
+            <div class="col-span-1 flex items-center">
+              <span class="bright-blue text-sm font-bold underline hover:cursor-pointer hover:text-indigo-300 hover:no-underline">Change</span>
+            </div>
+          </div>        
+          <button class="bg-bright-blue w-full p-3 rounded-xl my-5 drop-shadow-xl hover:bg-indigo-500">
+            <p class="text-white font-bold">Proceed to Payment</p>
+          </button>
+          <button>
+            <p class="font-bold pale-blue hover:desaturated-blue">Cancel Order</p>
+          </button>
+        </div>
+      </div>
+    </div>
+  </main>
+</body>
+</html>

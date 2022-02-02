@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@500;700;900&display=swap');
+
+:root{
+    --pale-blue: hsl(225, 100%, 94%);
+    --bright-blue: hsl(245, 75%, 52%);
+    --very-pale-blue: hsl(225, 100%, 98%);
+    --desaturated-blue: hsl(224, 23%, 55%);
+    --dark-blue: hsl(223, 47%, 23%);
+}
+
+body{
+    margin: 0;
+    font-family: 'Red Hat Display', sans-serif;
+    background-image: url("./images/pattern-background-desktop.svg");
+    background-repeat: no-repeat;
+    background-color: var(--very-pale-blue);
+    font-size: 16px;
+}
+
+.bg-very-pale-blue{
+    background-color: var(--very-pale-blue);
+}
+
+.pale-blue{
+    color: var(--pale-blue);
+}
+
+.bright-blue{
+    color: var(--bright-blue);
+}
+
+.bg-bright-blue{
+    background-color: var(--bright-blue);
+}
+
+.desaturated-blue{
+    color: var(--desaturated-blue);
+}
+
+.dark-blue{
+    color: var(--dark-blue);
+}
+
+.hover\:desaturated-blue:hover{
+    color:var(--desaturated-blue);
+}

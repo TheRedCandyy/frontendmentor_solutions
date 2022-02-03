@@ -44,3 +44,7 @@ body{
 .hover\:desaturated-blue:hover{
     color:var(--desaturated-blue);
 }
+
+.hover\:bright-blue:hover{
+    color: var(--bright-blue);
+}

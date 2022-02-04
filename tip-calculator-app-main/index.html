@@ -10,25 +10,27 @@
   <link rel="stylesheet" href="./style.css">
 </head>
 <body>
-  <header class="text-center text-2xl my-24 font-bold text-dark-grayish-cyan-2">
+  <header class="text-center text-2xl my-10 md:my-24 font-bold text-dark-grayish-cyan-2">
     S P L I <br> T T E R
   </header>
   <main>
-    <div class="container-fluid bg-white rounded-3xl p-10">
-      <div class="grid grid-cols-2">
+    <div class="bg-white rounded-3xl p-10 md:w-1/2 m-auto">
+      <div class="grid md:grid-cols-2">
         <div class="grid-cols-6 md:mr-10 md:mb-0 mb-10">
           <p class="text-dark-grayish-cyan-1 text-base font-bold">Bill</p>
           <input class="textbox-dollar py-2 px-5 text-xl font-bold" type="text" name="bill" id="bill" placeholder="0">
       
-          <p class="text-dark-grayish-cyan-1 text-base font-bold">Select Tip %</p>
-          
-          <div class="grid grid-cols-3 grid-rows-2 gap-4 my-10">
-            <a href='#target1' id='target1' onclick="setpercentage('5%')" class="tip-btn rounded p-4 font-bold text-xl target">5%</a>
-            <a href='#target2' id='target2' onclick="setpercentage('10%')" class="tip-btn rounded p-4 font-bold text-xl target">10%</a>
-            <a href='#target3' id='target3' onclick="setpercentage('15%')" class="tip-btn rounded p-4 font-bold text-xl target">15%</a>
-            <a href='#target4' id='target4' onclick="setpercentage('25%')" class="tip-btn rounded p-4 font-bold text-xl target">25%</a>
-            <a href='#target5' id='target5' onclick="setpercentage('50%')" class="tip-btn rounded p-4 font-bold text-xl target">50%</a>
-            <a href="#target6"><input onkeypress="setpercentage('custom')" class="textbox py-2 px-5 text-xl font-bold h-full" type="text" name="custom_percentage" id="custom_percentage" placeholder="Custom"></a>
+          <div class="my-10">
+            <p class="text-dark-grayish-cyan-1 text-base font-bold mt-5">Select Tip %</p>
+            
+            <div class="grid grid-cols-2 grid-rows-3 md:grid-cols-3 md:grid-rows-2 gap-4">
+              <a href='#target1' id='target1' onclick="setpercentage('5%')" class="tip-btn rounded p-4 font-bold text-xl target">5%</a>
+              <a href='#target2' id='target2' onclick="setpercentage('10%')" class="tip-btn rounded p-4 font-bold text-xl target">10%</a>
+              <a href='#target3' id='target3' onclick="setpercentage('15%')" class="tip-btn rounded p-4 font-bold text-xl target">15%</a>
+              <a href='#target4' id='target4' onclick="setpercentage('25%')" class="tip-btn rounded p-4 font-bold text-xl target">25%</a>
+              <a href='#target5' id='target5' onclick="setpercentage('50%')" class="tip-btn rounded p-4 font-bold text-xl target">50%</a>
+              <a href="#target6"><input onkeypress="setpercentage('custom')" class="textbox py-2 px-5 text-xl font-bold h-full" type="text" name="custom_percentage" id="custom_percentage" placeholder="Custom"></a>
+            </div>
           </div>
           
           <p class="text-dark-grayish-cyan-1 text-base font-bold float-left">Number of People</p>
@@ -49,7 +51,7 @@
           <span class="text-dark-grayish-cyan-2 text-sm">/ person</span>
           
           <div class="clear-both"></div>
-          <div class="relative h-44 w-full">
+          <div class="relative h-28 md:h-44 w-full">
             <div class="absolute inset-x-0 bottom-0">
               <button id="reset_btn" disabled class="disabled:bg-disabled-button disabled:text-disabled-button w-full rounded py-2 text-very-dark-cyan bg-strong-cyan text-lg font-bold">RESET</button>
             </div>

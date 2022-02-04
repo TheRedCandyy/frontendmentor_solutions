@@ -2,43 +2,153 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
-
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
   <title>Frontend Mentor | Tip calculator app</title>
-
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="./style.css">
 </head>
 <body>
+  <header class="text-center text-2xl my-24 font-bold text-dark-grayish-cyan-2">
+    S P L I <br> T T E R
+  </header>
+  <main>
+    <div class="container-fluid bg-white rounded-3xl p-10">
+      <div class="grid grid-cols-2">
+        <div class="grid-cols-6 md:mr-10 md:mb-0 mb-10">
+          <p class="text-dark-grayish-cyan-1 text-base font-bold">Bill</p>
+          <input class="textbox-dollar py-2 px-5 text-xl font-bold" type="text" name="bill" id="bill" placeholder="0">
+      
+          <p class="text-dark-grayish-cyan-1 text-base font-bold">Select Tip %</p>
+          
+          <div class="grid grid-cols-3 grid-rows-2 gap-4 my-10">
+            <a href='#target1' id='target1' onclick="setpercentage('5%')" class="tip-btn rounded p-4 font-bold text-xl target">5%</a>
+            <a href='#target2' id='target2' onclick="setpercentage('10%')" class="tip-btn rounded p-4 font-bold text-xl target">10%</a>
+            <a href='#target3' id='target3' onclick="setpercentage('15%')" class="tip-btn rounded p-4 font-bold text-xl target">15%</a>
+            <a href='#target4' id='target4' onclick="setpercentage('25%')" class="tip-btn rounded p-4 font-bold text-xl target">25%</a>
+            <a href='#target5' id='target5' onclick="setpercentage('50%')" class="tip-btn rounded p-4 font-bold text-xl target">50%</a>
+            <a href="#target6"><input onkeypress="setpercentage('custom')" class="textbox py-2 px-5 text-xl font-bold h-full" type="text" name="custom_percentage" id="custom_percentage" placeholder="Custom"></a>
+          </div>
+          
+          <p class="text-dark-grayish-cyan-1 text-base font-bold float-left">Number of People</p>
+          <p class="msg-error text-base font-bold float-right hidden" id="error">Can't be zero</p>
+          <div class="clear-both"></div>
+          
+          <input class="textbox-person py-2 px-5 text-xl font-bold" type="text" name="num_people" id="num_people" placeholder="0">
+        </div>
+        <div class="grid-cols-6 bg-very-dark-cyan rounded-2xl p-10">
+          <span class="text-strong-cyan font-bold text-5xl float-right" id="tip_amount">$0.00</span>
+          <p class="text-white font-bold">Tip Amount</p>
+          <span class="text-dark-grayish-cyan-2 text-sm">/ person</span>
+          
+          <div class="clear-both py-5"></div>
 
-  Bill
-
-  Select Tip %
-  5%
-  10%
-  15%
-  25%
-  50%
-  Custom
-
-  Number of People
-
-  Tip Amount
-  / person
-
-  Total
-  / person
-
-  Reset
+          <span class="text-strong-cyan font-bold text-5xl float-right" id="total_per_person">$0.00</span>
+          <p class="text-white font-bold">Total</p>
+          <span class="text-dark-grayish-cyan-2 text-sm">/ person</span>
+          
+          <div class="clear-both"></div>
+          <div class="relative h-44 w-full">
+            <div class="absolute inset-x-0 bottom-0">
+              <button id="reset_btn" disabled class="disabled:bg-disabled-button disabled:text-disabled-button w-full rounded py-2 text-very-dark-cyan bg-strong-cyan text-lg font-bold">RESET</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
   
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
+  <div class="attribution mt-20 text-sm">
+    Coded by <a href="https://theredcandyy.github.io/portfolio/">Alexandre Tavares</a>.
   </div>
+
+  <script>
+    var global_percentage = "";
+    function setpercentage(percentage){
+      global_percentage = percentage;
+      if($("#bill").val() != "0"){
+        switch(global_percentage){
+          case '5%':
+            $("#custom_percentage").val("");
+            $("#tip_amount").html("$" + ($("#bill").val() * 0.05).toFixed(2));
+            break;
+          case '10%':
+            $("#custom_percentage").val("");
+            $("#tip_amount").html("$" + ($("#bill").val() * 0.1).toFixed(2));
+            break;
+          case '15%':
+            $("#custom_percentage").val("");
+            $("#tip_amount").html("$" + ($("#bill").val() * 0.15).toFixed(2));
+            break;
+          case '25%':
+            $("#custom_percentage").val("");
+            $("#tip_amount").html("$" + ($("#bill").val() * 0.25).toFixed(2));
+            break;
+          case '50%':
+            $("#custom_percentage").val("");
+            $("#tip_amount").html("$" + ($("#bill").val() * 0.5).toFixed(2));
+            break;
+          default:
+            $("#tip_amount").html("$" + (($("#bill").val() * (parseFloat($("#custom_percentage").val()) / 10)).toFixed(2)));
+            break;
+        }
+      }
+    }
+
+    $("input").keypress(function(){
+      return event.charCode == 46 || (event.charCode >= 48 && event.charCode <= 57);
+    });
+
+    $("input").keyup(function(){
+      if($("#num_people").val() == 0){
+        $("#error").addClass("block");
+        $("#error").removeClass("hidden");
+        $("#num_people").addClass("textbox-error");
+      }else{
+        $("#error").removeClass("block");
+        $("#error").addClass("hidden");
+        $("#num_people").removeClass("textbox-error");
+
+        $("#total_per_person").html("$" + ($("#bill").val() / $("#num_people").val()).toFixed(2));
+
+        if($("#total_per_person").html() != "$0.00"){
+          $("#reset_btn").attr('disabled' , false);
+        }
+      }
+
+      switch(global_percentage){
+        case '5%':
+          $("#tip_amount").html("$" + ($("#bill").val() * 0.05).toFixed(2));
+          break;
+        case '10%':
+          $("#tip_amount").html("$" + ($("#bill").val() * 0.1).toFixed(2));
+          break;
+        case '15%':
+          $("#tip_amount").html("$" + ($("#bill").val() * 0.15).toFixed(2));
+          break;
+        case '25%':
+          $("#tip_amount").html("$" + ($("#bill").val() * 0.25).toFixed(2));
+          break;
+        case '50%':
+          $("#tip_amount").html("$" + ($("#bill").val() * 0.5).toFixed(2));
+          break;
+        default:
+          $("#tip_amount").html("$" + ($("#bill").val() * $("#custom_percentage").val()).toFixed(2));
+          break;
+      }
+    });
+
+    $("#reset_btn").click(function(){
+      if($("#reset_btn").attr('disabled') != true){
+        $("#bill").val("");
+        $("#num_people").val("");
+        $("#custom_percentage").val("");
+        document.location.hash = '';
+      }
+
+      $("#reset_btn").attr('disabled', true);
+    });
+  </script>
 </body>
 </html>

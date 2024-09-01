@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="defaultStyle.css" />
+    <link rel="stylesheet" href="style.css" />
+
+    <title>Frontend Mentor | Advice generator app - Alexandre Tavares</title>
+
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <style>
+      .attribution {
+        font-size: 11px;
+        text-align: center;
+      }
+      .attribution a {
+        color: hsl(228, 45%, 44%);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <p class="advice-id">Advice # <span class="js-advice--id"></span></p>
+  
+      <p class="js-advice--text advice-text"><!-- Advice text goes here --></p>
+      <picture class="advice-divider">
+        <source media="(min-width:768px)" srcset="./images/pattern-divider-desktop.svg">
+        <img src="./images/pattern-divider-mobile.svg" alt="Divider">
+      </picture>
+      <div class="advice-new">
+        <img class="js-advice-new" src="./images/icon-dice.svg" alt="Dice icon"></img>
+      </div>
+    </div>
+
+    <div class="attribution">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+        >Frontend Mentor</a
+      >. Coded by <a href="https://theredcandyy.github.io/portfolio/">Alexandre Tavares</a>.
+    </div>
+    <script src="main.js"></script>
+  </body>
+</html>
